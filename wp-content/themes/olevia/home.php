@@ -15,7 +15,8 @@ $theme_options = olevia_get_options();
 // Custom query
 $args  = array(
   'post_type'      => 'portfolio',
-  'posts_per_page' => $theme_options['home_projects_num']
+  'posts_per_page' => $theme_options['home_projects_num'],
+  'tag' => 'home'
 );
 $query = new WP_Query( $args );
 
@@ -37,7 +38,7 @@ get_header(); ?>
 
             <div class="c-portfolio-items c-portfolio-items--home">
 
-            <a class="c-portfolio-item--home c-featured--home c-featured c-portfolio-item" href="http://www.perfectchaos.se/portfolio/38/"><img src="http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith4.png" 
+            <a class="c-portfolio-item--home c-featured--home c-featured c-portfolio-item" href="http://www.perfectchaos.se/portfolio/38/"><img src="http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith4.png"
                   onmouseover="this.src='http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith5.jpg'"
                   onmouseout="this.src='http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith4.png'" /></A>
 
@@ -45,12 +46,12 @@ get_header(); ?>
 
                 <?php get_template_part( 'template-parts/content', 'portfolio-home' ); ?>
 
-               
+
 
               <?php endwhile; ?>
 
 
-               <a class="c-portfolio-item--home c-featured--home c-featured c-portfolio-item" href="http://www.perfectchaos.se/portfolio/perfect-chaos-15/"><img src="http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith1.jpg" 
+               <a class="c-portfolio-item--home c-featured--home c-featured c-portfolio-item" href="http://www.perfectchaos.se/portfolio/perfect-chaos-15/"><img src="http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith1.jpg"
                   onmouseover="this.src='http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith2.png'"
                   onmouseout="this.src='http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith1.jpg'" /></A>
 
@@ -84,7 +85,7 @@ get_header(); ?>
 <script type="text/javascript">
   $(function() {
     $("img")
-        .mouseover(function() { 
+        .mouseover(function() {
             var src = "http://www.perfectchaos.se/wp-content/uploads/2016/01/dan-tobin-smith5-500x334.jpg"
             $(this).attr("src", src);
         })
