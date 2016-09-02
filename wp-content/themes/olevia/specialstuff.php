@@ -16,7 +16,13 @@ $theme_options = olevia_get_options();
 $args  = array(
   'post_type'      => 'portfolio',
   'posts_per_page' => $theme_options['home_projects_num'],
-  'tag' => 'studieresa'
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'portfolio_tag',
+      'field' => 'slug',
+      'terms' => 'portfolio_tag'
+    )
+  )
 );
 $query = new WP_Query( $args );
 
